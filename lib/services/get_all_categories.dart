@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+//Function to get Al Categories
 class GetAllCategories
 {
   Future<List<dynamic>> getCategories()
