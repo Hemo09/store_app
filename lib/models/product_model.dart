@@ -1,4 +1,4 @@
-class Product {
+class ProductModel {
   final String? id;
   final String? title;
   final String? price;
@@ -7,12 +7,12 @@ class Product {
   final String? category;
   final Rating? rate;
 
-  Product({this.id, this.title, this.price, this.description, this.image,
+  ProductModel({this.id, this.title, this.price, this.description, this.image,
     this.category , this.rate});
 
-  factory Product.fromJson(json)
+  factory ProductModel.fromJson(json)
   {
-    return Product(
+    return ProductModel(
          id: json["id"],
         title : json["title"],
         price:json["price"],
