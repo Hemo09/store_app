@@ -2,10 +2,11 @@ import 'dart:convert';
 import 'package:store/models/product_model.dart';
 import 'package:http/http.dart' as http;
 
+import '../constant.dart';
+
 //Function to Get All Products
 class GetAllProducts
 {
-  String baseUrl = "https://fakestoreapi.coml";
   Future<List<ProductModel>> getAllProducts()async
   {
    http.Response response = await http.get(Uri.parse("$baseUrl/products"));
