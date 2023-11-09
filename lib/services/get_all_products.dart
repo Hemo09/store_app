@@ -15,6 +15,7 @@ class GetAllProducts
    for(int i =0   ; i<data.length ; i++){
      productList.add(ProductModel.fromJson(data[i]));
    }
+   print(data);
    return productList;
   }
 }
