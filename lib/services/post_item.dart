@@ -1,19 +1,32 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
+import 'package:store/models/product_model.dart';
 
 import '../constant.dart';
 class PostItem{
-  Future <Response> sendData()async
+  Future <ProductModel> sendData(
+  {
+    required String title,
+    required String description,
+    required String price,
+    required String image,
+    required String category,
+}
+      )async
   {
    http.Response response = await http.post(Uri.parse("$baseUrl/products") , body:
     {
-    "title": "test product",
-    "price": "12.5",
-    "description": "lorem ipsum set",
-    "image": "https://i.pravatar.cc",
-    "category":"electronic",
-    });
-   print(response.body);
-   return response;
+    "title": title,
+    "price": price,
+    "description": description,
+    "image": image,
+    "category":category,
+    }
+    );
+   Map<String , dynamic> data = jsonDecode(response.body);
+   print(data);
+   return ProductModel.fromJson(data);
   }
 }
