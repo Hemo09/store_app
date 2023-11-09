@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: MaterialButton( onPressed: ()async{
           PostItem post = PostItem();
-          await post.sendData();
+
         },child: const Text("enter")),
       ),
     );
