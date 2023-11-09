@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:store/constant.dart';
 import 'package:store/firebase_options.dart';
+import 'package:store/routes.dart';
 import 'package:store/view/screens/home_page.dart';
 
 void main()
@@ -24,8 +26,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      debugShowCheckedModeBanner: false
-      ,
+      debugShowCheckedModeBanner: false,
+      routes: routes,
+      initialRoute: AppRoutes.homePage,
       home: const HomePage(),
     );
   }
