@@ -1,7 +1,7 @@
 class ProductModel {
-  final String? id;
+  final dynamic id;
   final String? title;
-  final String? price;
+  final dynamic price;
   final String? description;
   final String? image;
   final String? category;
@@ -26,8 +26,8 @@ class ProductModel {
 }
 
 class Rating{
-  final String? rate;
-  final String? count;
+  final dynamic rate;
+  final dynamic count;
   Rating({this.rate , this.count});
   factory Rating.fromJson(json){
     return Rating(
