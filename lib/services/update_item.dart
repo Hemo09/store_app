@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:store/models/product_model.dart';
@@ -10,13 +11,13 @@ class UpdateItem{
       {
         required String title,
         required String description,
-        required String price,
+        required dynamic price,
         required String image,
-        required String category,
+         String? category,
       }
       )async
   {
-    http.Response response = await http.post(Uri.parse("$baseUrl/products") , body:
+    http.Response response = await http.put(Uri.parse("$baseUrl/products") , body:
     {
       "title": title,
       "price": price,
