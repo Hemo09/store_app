@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 class DefaultTextForm extends StatelessWidget {
-  DefaultTextForm({super.key,this.suffix,this.colorIcon,this.pressIcon, this.controller, this.tap, this.submit, this.validate, required this.type, this.secure = false, required this.hint});
+  DefaultTextForm({super.key, this.change,this.suffix,this.colorIcon,this.pressIcon, this.controller, this.tap, this.submit, this.validate, required this.type, this.secure = false, required this.hint});
   final TextEditingController? controller;
   final void Function()? tap;
   final void Function(String?)? submit;
@@ -11,6 +11,8 @@ class DefaultTextForm extends StatelessWidget {
   IconData? suffix;
   Color? colorIcon;
   void Function()? pressIcon;
+  void Function(String?)? change;
+
 
 
   @override
@@ -28,6 +30,7 @@ class DefaultTextForm extends StatelessWidget {
           style: const TextStyle(
             color: Colors.black,
           ),
+          onChanged: change,
           controller: controller,
           onFieldSubmitted: submit,
           validator: validate,

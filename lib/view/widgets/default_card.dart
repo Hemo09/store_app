@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store/constant.dart';
 import 'package:store/models/product_model.dart';
-import 'package:store/view/screens/home_page.dart';
-import 'package:store/view/screens/update_product.dart';
 class DefaultCard extends StatelessWidget {
   const DefaultCard({super.key , required this.data});
 final ProductModel data ;
